@@ -1,0 +1,36 @@
+mat-card-title{
+    border-bottom: 1px solid #EAEAEC;
+}
+.full-height{
+    height: 100%;
+    color: #282C3F;
+    background-color: #ffffff;
+}
+.account{
+    border-bottom: 1px solid #d4d5d9;
+    padding-top: 8%;
+    font-size: 12px;
+}
+.accountheading{
+    font-size: 50px Whitney;
+    font-weight:800;
+    color: #000000;
+}
+.page-page{
+    margin: -1% 5%;
+    min-height: 650px;
+    background-color: white;
+}
+
+.matcard{
+    margin-top: 15px;
+}
+mat-card{
+    padding: 55px 40px 20px 40px;
+}
+table {
+    width: 100%;
+  }
+  td.mat-cell{
+    border-bottom-style: hidden;
+}

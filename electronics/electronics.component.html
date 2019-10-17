@@ -1,0 +1,28 @@
+
+<div fxLayout.gt-xs>
+    <div  *ngFor="let response of electronics">
+        <mat-card fxFlex.xs="100%"> 
+            <mat-card-header>
+              <mat-card-title>
+                {{response.description}}
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{response.price}}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <div>
+              <img mat-card-image src="{{response.imagePath}}">
+            </div>
+            <!-- <mat-card-actions>
+              <button mat-icon-button fxLayoutAlign="right">
+                <mat-icon>4k</mat-icon>
+              </button>
+            </mat-card-actions> -->
+            <mat-card-actions fxLayoutAlign="end">
+              <button mat-raised-button mat-mini-fab>Add</button>
+            </mat-card-actions>
+          </mat-card> 
+    </div> 
+</div>
+ 
+ 

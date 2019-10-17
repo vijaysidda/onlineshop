@@ -1,0 +1,55 @@
+
+<section class="logincontainer"  fxLayoutAlign="center center">
+    <div *ngIf="isLoading" fxLayoutAlign="center">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+    <mat-card fxFlex="400px" fxLayout="column" fxLayoutAlign="center center" *ngIf="!isLoading"> 
+      <div></div>
+        <mat-card-title fxFlex>Login</mat-card-title>
+        <mat-card-content class="mat-card-content">
+          <div fxLayout="column">
+              <form fxLayout="column" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                  <div>
+                      <mat-form-field fxFlex appearance="fill">
+                        <mat-label>Enter Email/Mobile number</mat-label>
+                        <input
+                         matInput
+                         type="text"
+                         placeholder="Username"
+                         ngModel
+                         name="username"
+                         required
+                         email
+                         #email="ngModel"
+                         >
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <mat-form-field fxFlex  appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input
+                         type="password"
+                         matInput 
+                         placeholder="Password"
+                         ngModel
+                         name="password"
+                         required>
+                      </mat-form-field>
+                  </div>
+                  <div>
+                    <button mat-raised-button	color="primary" type="submit" fxFlex>Subimt</button>
+                  </div>
+              </form>
+              <div class="signupContainer">
+                <a routerLink="/signup"> New to ShoppingIndeed?Create an account</a>
+              </div>
+          </div>
+          
+        </mat-card-content>
+      </mat-card>
+</section>
+  
+   
+
+
+

@@ -1,0 +1,170 @@
+a{
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 500;
+    font-stretch: normal;
+    font-size: 18px;
+    line-height: 32px;
+    text-decoration: none;
+    color: aliceblue;
+    cursor: pointer;
+}
+/* ****-------toolbars-------**** */
+.toolbarhead{
+    background-color: #2874f0;
+    height: 56px;
+}
+.secondToolbar{
+    height: 40px;
+}
+/* ------------****LOgo Spriting****------------ */
+.logospriting {
+    display: inline-block;
+    background: url(../../../assets/images/slogo.jpg);
+    background-size: 195px 148px;
+    background-position: 150px -49px;
+}
+.logodimension {
+    width: 104px;
+    height: 49px;
+    vertical-align: middle;
+}  
+ .logocontainer{
+    margin-left: 30px;
+ }
+  .logocontainer:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+
+/* ----------------*****Navigation items*****---------------- */
+
+  .navigationItems{
+      list-style: none;
+      padding-right: 50px;
+      margin : 0px;
+      
+  }
+  .navigationItems li {
+      padding-right: 20px;
+      margin: 0;
+  }
+  .secondtooldiv{
+      padding-left: 30px;
+      margin: 0px;
+      padding-right: 40px;
+  }
+  .secondtooldiv ul li{
+      padding: 10px;
+      padding-right: 70px;
+      font-size: 18px;
+      font-weight: 500;
+  }
+  span{
+      cursor: pointer;
+  }
+  /*-------------------------More Details----------------------------*/
+
+  .header_userpage{
+    width:250px;
+    height: 320px;
+    left: -90px;
+    position: relative;
+    top: 10px;
+    background-color: #FFFFFF;
+    color: #3E4152;
+    border: 3px solid #F5F5F6;
+    display: none;
+    opacity: 1;
+    margin: -2px 0px;
+    transition: opacity 0.2s ease-out,visibility 0.2s ease-out;
+    z-index: 10;
+}
+.header_usercontentborder{
+                display: block;
+                position: absolute;
+                top: -5px;
+                position: absolute;
+                width: 50px;
+                border-bottom: 4px solid #f16565;
+                left: 84px;
+
+            }
+.header_userblock{
+        display: block;
+        width: 30px;
+        height: 40px;
+        /* margin-right: 50px; */
+     }
+.header_userblock:hover .header_userpage{
+display: block;
+}
+.usermessage{
+height: 50px;
+width: 200px;
+}
+
+.userwelcometitle {
+font-family: Whitney-SemiBold, Whitney;
+font-weight: 1000;
+height: 20px;
+font-size: 14px;
+}
+
+.user_info {
+font-family: Whitney;
+height: 14px;
+font-size: 14px;
+color: #282C3F;
+width: 107%;
+}
+
+.header_usercontent {
+display: block;
+padding: 10px 20px;
+}
+
+
+
+
+
+.userprofilelinks {
+display: inline-block;
+width: 100%;
+padding: 10px 0px;
+border-top: 1px solid #d4d4e2; 
+}
+
+.userauthentication {
+    display: inline-block;
+    padding: 0px 14px;
+    width: 30%;
+    margin: 10px 10px 0px 0px;
+    border: 1px solid #EAEAEC;
+    border-radius: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ff3f6c;
+    font-weight: 800;
+    font-family: Whitney-SemiBold, Whitney;
+}
+.userauthentication:nth-child(2){margin: 0px 0px 0px 10px}
+.userauthentication:nth-child(1){margin: 0px 5px 6px 0px}
+.userauthentication:hover{border:1px solid #ff3f6c}
+
+
+.profiledetails {
+line-height: 30px;
+font-weight: 400;
+font-size: 14px;
+color: #3E4152;
+}
+.profiledetails:hover{font-weight: bolder;}
+
+*{
+    box-sizing: content-box
+}
+  

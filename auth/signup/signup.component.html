@@ -1,0 +1,120 @@
+
+ <html>
+    <section  fxLayoutAlign="center" >
+        <div *ngIf="isLoading" fxLayoutAlign="center">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+      <mat-card fxFlex="400px" fxLayout="column" fxLayoutAlign="center center" *ngIf="!isLoading">
+        <mat-card-header>
+          <mat-card-title>SignUp</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mat-card-content">
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div fxLayout="column" fxFlex="250px" fxLayoutGap="15px">
+    
+              <div formGroupName="name" fxLayout="column">
+                  <mat-form-field appearance="legacy">
+                      <mat-label>Enter First Name</mat-label>
+                      <input type="text" matInput placeholder="First Name" formControlName="first">
+                      <mat-error *ngIf="signupForm.get('name.first').touched && signupForm.get('name.first').invalid">
+                        <span *ngIf="signupForm.get('name.first').hasError('required')">Firstname should be required</span>
+                      </mat-error>
+                  </mat-form-field>
+          
+                  <mat-form-field appearance="legacy">
+                        <mat-label>Enter Last Name</mat-label>
+                        <input type="text" matInput placeholder="Last Name" formControlName="last">
+                        <mat-error *ngIf="signupForm.get('name.last').touched && signupForm.get('name.last').invalid">
+                          <span *ngIf="signupForm.get('name.last').hasError('required')">Lastname should be required</span>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+    
+             <mat-form-field appearance="legacy" fxFlex>
+                <mat-label>Enter Email</mat-label>
+                <input type="text" matInput placeholder="Email" formControlName="email">
+                <mat-hint>your username will be email</mat-hint>
+                <mat-error *ngIf="signupForm.get('email').touched && signupForm.get('email').invalid">
+                  <span *ngIf="signupForm.get('email').hasError('required')">Email should be required</span>
+                  <span *ngIf="signupForm.get('email').hasError('email')">Entered email address is invalid</span>
+                </mat-error>
+              </mat-form-field>
+    
+              <div formGroupName="mobile" >
+                <div fxLayout fxLayoutGap="20px" class="selecterror">
+                    <mat-form-field fxFlex="50px">
+                        <mat-label></mat-label>
+                        <mat-select [(ngModel)]="selectedValue" 
+                          name="countrycode" 
+                          formControlName="countrycode" (ngModelChange)='countrycodeSelected($event)'>
+                          <div>
+                             <mat-option *ngFor="let country of countrycode"
+                              [value]="country.value">
+                              <p *ngIf="selectedValue !== modifiedValue" >({{country.value}}){{country.viewValue}}</p>
+                              
+                            </mat-option> 
+                          </div> 
+                          <div *ngIf="selectedValue == modifiedValue">
+                            <mat-option *ngFor="let country of countrycode"
+                              [value]="country.value">
+                              {{country.value}}
+                            </mat-option> 
+                          </div>
+                          
+                        </mat-select>
+                      </mat-form-field>
+      
+                    <mat-form-field appearance="legacy">
+                          <input type="text" matInput placeholder="MobileNumber" formControlName="number">
+                          <!-- <mat-error *ngIf="signupForm.get('mobile.number').touched && signupForm.get('mobile.number').invalid">
+                            <span *ngIf="signupForm.get('mobile.number').hasError('required')">Lastname should be required</span>
+                          </mat-error> -->
+                     </mat-form-field>
+                    
+                </div>
+                  
+                <mat-error *ngIf="signupForm.get('mobile.number').touched && signupForm.get('mobile.number').invalid">
+                    <span  *ngIf="signupForm.get('mobile.number').hasError('required')">MobileNumber should be required</span>
+                  </mat-error>
+    
+               </div>
+              
+              <mat-form-field appearance="legacy" fxFlex>
+                <mat-label>Enter Password</mat-label>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <mat-hint></mat-hint>
+                <mat-error *ngIf="signupForm.get('password').touched && signupForm.get('password').invalid">
+                  <span *ngIf="signupForm.get('password').errors.required">Password must be required</span>
+                  <span *ngIf="signupForm.get('password').errors.minlength">Password should contain 6 charecters</span>
+                </mat-error>
+              </mat-form-field>
+        
+              <mat-form-field appearance="legacy" fxFlex>
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" placeholder="Confirm Password" appConfirmValidator ="password" formControlName="confirmpassword">
+                <mat-hint></mat-hint>
+                <mat-error *ngIf="signupForm.get('confirmpassword').touched && signupForm.get('confirmpassword').invalid">
+                  <span *ngIf="signupForm.get('confirmpassword').errors.required">confirmpassword must be required</span>
+                  <span *ngIf="signupForm.get('confirmpassword').errors.notEqual">password and confirmpassword not matched</span>
+                </mat-error>
+              </mat-form-field>
+        
+              <!-- <mat-radio-group aria-label="Select an option" fxFlex formControlName="gender">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+              </mat-radio-group>
+         -->
+    
+             
+              <div fxFlex gdAlignRows="center">
+                <button mat-raised-button	color="primary" type="submit">SignUp</button>
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+        
+      </mat-card>
+      
+    </section>    
+ </html> 
+

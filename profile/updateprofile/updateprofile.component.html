@@ -1,0 +1,103 @@
+<div style="background-color:#ffffff">
+    <div class="full-height">
+        <div class="page-page">
+          <div class="account" style="width: 70%">
+            <div class="accountheading">Account</div>
+            <div>{{userdata?.email}}</div>
+          </div>
+          <form [formGroup] ="updateform" (ngSubmit)="onUpdate()">
+                <div class="matcard">
+                        <mat-card style="width: 70%" fxFlex.lt-md="100%">
+                          <div class="cardTitle">
+                              <mat-card-title>Profile Details</mat-card-title>
+                          </div>
+                          <div class="profileControls" fxLayout="column">
+                            <div class="profileEdit-email">
+                                <mat-form-field appearance="outline" fxFlex.lt-md="100%">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput  placeholder="Email" value="{{userdata?.email}}" disabled formControlName="email">
+                                  </mat-form-field>
+                            </div>
+                           <span class="profileEditPassword" (click)="showChangePwd()">Change Password</span>
+                            <div>
+                                <mat-form-field appearance="outline" fxFlex.lt-md="100%">
+                                    <mat-label>Password</mat-label>
+                                    <input type="password" value="********" disabled matInput placeholder="Password">
+                                </mat-form-field>
+                            </div>
+                            
+                          </div>
+                          
+                          
+                          <div class="general">
+                              <mat-card-title>
+                                  General Information
+                              </mat-card-title>
+                          </div>
+                          <div fxLayout="column">
+                              <mat-form-field>
+                                  <input matInput placeholder="Firstname" value="{{userdata?.firstname}}" formControlName="firstname">
+                                  <mat-error ></mat-error>
+                                </mat-form-field>
+          
+                                <mat-form-field>
+                                    <input matInput placeholder="Lastname" value="{{userdata?.lastname}}" formControlName="lastname">
+                                    <mat-error ></mat-error>
+                                </mat-form-field>
+                                
+                                <div class="mobilenumber" fxLayout fxLayoutGap="10%">
+                                  <mat-form-field fxFlex.lt-md="30%">
+                                      <mat-label>CountryCode</mat-label>
+                                          <select matNativeControl [(value)]="selected" formControlName="countrycode">
+                                                <option value="+91">+91</option>
+                                          </select>
+                                  </mat-form-field>
+                                  <mat-form-field fxFlex.lt-md="60%" fxFlex="60%">
+                                      <input matInput placeholder="MobileNumber" value="{{userdata?.number}}" formControlName="mobilenumber">
+                                      <mat-error ></mat-error>
+                                  </mat-form-field>
+                                </div>      
+                          </div>
+                          
+                              <div fxLayoutGap="5px">
+                                  <button mat-raised-button type="button" (click)="onUpdate()">Update</button>
+                                  <button mat-raised-button type="button" (click)="onUpdate()">Delete</button>
+                              </div>
+                        </mat-card>
+                    </div>
+          </form>
+        </div>
+        
+      </div>      
+      <form>
+        <div fxLayout="column">
+            <mat-card class="changepwdcard">
+                    <div>
+                        <mat-card-title>
+                            ChangePassword
+                        </mat-card-title>
+                    </div>
+                    <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Old Password</mat-label>
+                                <input type="password"  matInput placeholder="Password">
+                            </mat-form-field>
+                    </div>
+                    <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input type="password"  matInput placeholder="Password">
+                            </mat-form-field>
+                    </div>
+                    <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Confirm Password</mat-label>
+                                <input type="password"   matInput placeholder="Confirm Password">
+                            </mat-form-field>
+                    </div>
+            </mat-card>
+        </div>
+  </form>      
+</div>
+
+

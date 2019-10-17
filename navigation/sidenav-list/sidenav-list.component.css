@@ -1,0 +1,68 @@
+.Welprofile{
+    padding: 24px 16px;
+    border-bottom: 1px solid rgba(0,0,0,.16);
+}
+.mat-list-base{
+    padding-top: 0px;
+   
+}
+.mat-list-base .mat-list-item {
+    font-size: .775rem;
+    height: 25px;
+    font-family: dinnextprobold,Helvetica Neue,Helvetica,Arial,sans-serif;
+  
+}
+
+
+.greet-left{
+    width: 72%;
+}
+.Welprofile .greet-txt{
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.125rem;
+}
+
+.Welprofile .sb-top-nav{
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(245,133,9,.1);
+    padding: 6px 12px 4px;
+    border-radius: 4px;
+    margin-top: 12px;
+}
+.sb-top-link{
+    color: #f58509;
+}
+.txt-btn-def{
+    font-family:  dinnextprobold,Helvetica Neue,Helvetica,Arial,sans-serif;
+    
+}
+/* .greet-right {
+    width: 30%;
+    margin-left: auto;
+    float: right;
+   
+}
+.greet-left,.greet-right{
+    display: inline-block;
+    vertical-align: top;
+} */
+/* 
+.profilrimage{
+    display: inline-block;
+    background: url(../../../assets/images/profilrimage.jpg);
+    background-size: 195px 148px;
+    background-position: 150px -49px;
+} */
+.itemscontainer{
+    padding: 8px 16px
+}
+.item{
+    padding: 12px 0px;
+}
+.item-link{
+    display: block;
+}

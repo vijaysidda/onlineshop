@@ -1,0 +1,70 @@
+<mat-toolbar fxLayout="row wrap" class="mattoolbar">
+ 
+    <mat-toolbar-row  fxFlex="grow" class="toolbarhead" >
+        <div>
+            <button mat-icon-button (click)="onSidenavToggle()">
+                <i class="material-icons">menu</i>
+            </button>
+        </div>
+        <div class="logocontainer">
+            <a class="logospriting logodimension" routerLink="/home"></a>
+        </div>
+        <div fxLayout fxFlex="shrink" fxLayoutAlign="flex-end" fxHide.xs>
+            <ul fxLayout fxLayoutGap="10px" class="navigationItems">
+                <li *ngIf="!isAuthenticated"><a routerLink="/login">Login & SignUp</a></li>
+                <li *ngIf="isAuthenticated" (click)="onLogout()"><a>Logout</a></li>
+                <div class="header_actions" *ngIf="isAuthenticated">
+                        <li class="header_userblock">
+                                <a>
+                                    More
+                                </a>
+                                 <div class="header_userpage">
+                                        <div class="header_usercontentborder"></div>
+                                        <div class="header_usercontent">
+                                            <div class="usermessage">
+                                                <div class="userwelcometitle">Welcome</div>
+                                                <div class="user_info">To access account and manage orders </div>
+                                            </div>
+                                        <div>
+                                                <div class="userprofilelinks" fxLayout="column">
+                                                    <a  class="profiledetails" routerLink="profile" fxFlex>Profile</a>
+                                                    <a  class="profiledetails" fxFlex>Update Profile</a>
+                                                    <a  class="profiledetails" fxFlex>All Users</a>
+                                                    <a  class="profiledetails" fxFlex>OtherUserDetails</a>
+                                                    <a  class="profiledetails" fxFlex>Update OtherUser</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li> 
+                </div>
+
+                <li><a routerLink="/cart">Cart</a></li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+        
+    <mat-toolbar-row fxFlex class="secondToolbar" fxHide.lt-md>
+        <div fxLayout fxLayoutAlign="flex-start" class="secondtooldiv">
+            <ul fxLayout fxLayoutGap="25px" class="navigationItems">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <span routerLink="/electronics" >Electronics</span>
+                </li>
+                <li [routerLinkActive]="['active']">
+                    <span routerLink="/tvs&appliences">TVs&Appliences</span>
+                </li>
+                <li [routerLinkActive]="['active']">
+                    <span routerLink="/men">Men</span>
+                </li>
+                <li [routerLinkActive]="['active']">
+                    <span routerLink="/women">Women</span>
+                </li>
+                <li [routerLinkActive]="['active']">
+                    <span routerLink="/home&kitchen">Home&Kitchen</span>
+                </li>
+                
+            </ul>
+        </div>
+    </mat-toolbar-row>
+ 
+</mat-toolbar>

@@ -1,0 +1,33 @@
+<mat-nav-list>
+  <div class="Welprofile" *ngIf="!isAuthenticated">
+    <div class="greet-left">
+      <div class="greet-txt slc-list">Welcome!</div>
+      <div class="sb-top-nav">
+        <a  mat-list-item class="sb-top-link txt-btn-def" routerLink="/login" (click)="onClose()">SIGN IN | SIGN UP </a>
+      </div>
+    </div>
+    <!-- <div class="greet-right">
+      <a routerLink="" class="profilrimage"></a>
+    </div> -->
+  </div>
+  <div class="itemscontainer">
+    <div class="item">
+      <a mat-list-item routerLink="/electronics" class="item-link" (click)="onClose()">Electronics</a>
+    </div>
+    <div class="item">
+      <a mat-list-item routerLink="/tvs&appliences" class="item-link" (click)="onClose()"> TVs & Appliences</a>
+    </div>
+    <div class="item">
+      <a mat-list-item routerLink="/men" class="item-link" (click)="onClose()">Men</a>
+    </div>
+    <div class="item">
+      <a mat-list-item routerLink="/women" class="item-link" (click)="onClose()">Women</a>
+    </div>
+    <div class="item">
+      <a mat-list-item routerLink="/home&kitchen" class="item-link" (click)="onClose()">Home & Kitchen</a>
+    </div>
+    <div class="item" *ngIf="isAuthenticated">
+        <a mat-list-item  class="item-link" (click)="onClose()">Logout</a>
+      </div>
+  </div>
+</mat-nav-list>
